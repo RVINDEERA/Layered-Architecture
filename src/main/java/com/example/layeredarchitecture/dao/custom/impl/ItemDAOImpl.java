@@ -66,10 +66,10 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public ItemDTO search(String code) throws SQLException, ClassNotFoundException {
 
-        ResultSet rst = SQLUtil.execute("SELECT * FROM Item WHERE code=?");
+        ResultSet rst = SQLUtil.execute("SELECT * FROM Item WHERE code=?",code);
         if(rst.next()){
-            ItemDTO itemDTO= new ItemDTO(code + "", rst.getString("description"), rst.getBigDecimal("unitPrice"), rst.getInt("qtyOnHand"));
-            return itemDTO;
+            ItemDTO dto= new ItemDTO(code + "", rst.getString("description"), rst.getBigDecimal("unitPrice"), rst.getInt("qtyOnHand"));
+            return dto;
         }else{
             return null;
         }
