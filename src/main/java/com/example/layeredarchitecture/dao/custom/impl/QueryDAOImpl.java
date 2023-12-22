@@ -14,7 +14,7 @@ public class QueryDAOImpl implements QueryDAO {
         ResultSet resultSet = SQLUtil.execute("select b.date,a.id,a.name,b.oid ,c.itemCode,c.qty,c.unitPrice from  Customer a join Orders b on a.id = b.customerID join OrderDetails c on b.oid = c.oid");
 
         resultSet.next();
-        return new PlacedOrdersDTO(
+         return new PlacedOrdersDTO(
                 resultSet.getDate(1).toLocalDate(),
                 resultSet.getString(2),
                 resultSet.getString(3),
