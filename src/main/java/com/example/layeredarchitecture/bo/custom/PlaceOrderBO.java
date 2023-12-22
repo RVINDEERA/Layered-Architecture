@@ -1,4 +1,4 @@
-package com.example.layeredarchitecture.bo;
+package com.example.layeredarchitecture.bo.custom;
 
 import com.example.layeredarchitecture.model.CustomerDTO;
 import com.example.layeredarchitecture.model.ItemDTO;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface PlaceOrderBo {
+public interface PlaceOrderBO {
     boolean placeOrder (String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) throws SQLException, ClassNotFoundException ;
     ItemDTO findItem(String code) ;
     CustomerDTO searchCustomer (String id) throws SQLException, ClassNotFoundException;
