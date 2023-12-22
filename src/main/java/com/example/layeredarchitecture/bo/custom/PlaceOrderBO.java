@@ -1,8 +1,9 @@
 package com.example.layeredarchitecture.bo.custom;
 
-import com.example.layeredarchitecture.model.CustomerDTO;
-import com.example.layeredarchitecture.model.ItemDTO;
-import com.example.layeredarchitecture.model.OrderDetailDTO;
+import com.example.layeredarchitecture.dto.CustomerDTO;
+import com.example.layeredarchitecture.dto.ItemDTO;
+import com.example.layeredarchitecture.dto.OrderDetailDTO;
+import com.example.layeredarchitecture.entity.Customer;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -12,7 +13,7 @@ import java.util.List;
 public interface PlaceOrderBO extends SupperBO {
     boolean placeOrder (String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails) throws SQLException, ClassNotFoundException ;
     ItemDTO findItem(String code) ;
-    CustomerDTO searchCustomer (String id) throws SQLException, ClassNotFoundException;
+    Customer searchCustomer (String id) throws SQLException, ClassNotFoundException;
     ItemDTO searchItem (String id) throws SQLException, ClassNotFoundException;
     boolean existCustomer(String id) throws SQLException, ClassNotFoundException;
     boolean existItem(String code) throws SQLException, ClassNotFoundException;
